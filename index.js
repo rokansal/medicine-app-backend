@@ -1,7 +1,5 @@
 import express, { json } from 'express';
-import getShoppingResults from './vertex.mjs';
-import {VertexAI} from '@google-cloud/vertexai';
-import { getJson } from "serpapi";
+import getShoppingResults from './vertex.js';
 import cors from "cors";
 
 
@@ -15,7 +13,7 @@ app.use(express.urlencoded({limit: '50mb'}));
 
 // app.use(urlencoded({ extended: false }));
 //why is this not working:()
-const port = 3000
+const port = 3000;
 
 app.post('/', (req, res) => {
   res.send('Hello world!')
@@ -42,5 +40,5 @@ app.post('/upload', async (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Medicine app listening on port ${port}`)
 })
