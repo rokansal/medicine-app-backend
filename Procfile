@@ -1,0 +1,1 @@
+web: npm run backend --host=0.0.0.0 --port=$PORT
