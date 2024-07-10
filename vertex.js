@@ -13,24 +13,6 @@ export default async function getShoppingResults(image) {
       'temperature': 1,
       'topP': 0.95,
     },
-    // safetySettings: [
-    //   {
-    //       'category': 'HARM_CATEGORY_HATE_SPEECH',
-    //       'threshold': 'BLOCK_MEDIUM_AND_ABOVE'
-    //   },
-    //   {
-    //       'category': 'HARM_CATEGORY_DANGEROUS_CONTENT',
-    //       'threshold': 'BLOCK_MEDIUM_AND_ABOVE'
-    //   },
-    //   {
-    //       'category': 'HARM_CATEGORY_SEXUALLY_EXPLICIT',
-    //       'threshold': 'BLOCK_MEDIUM_AND_ABOVE'
-    //   },
-    //   {
-    //       'category': 'HARM_CATEGORY_HARASSMENT',
-    //       'threshold': 'BLOCK_MEDIUM_AND_ABOVE'
-    //   }
-    // ],
   });
 
   let shoppingResults = {
@@ -100,37 +82,3 @@ export default async function getShoppingResults(image) {
   const results = await generateContent() 
   return(results)
 }
-
-/*
-const jsonFunction = (medicines) => {
-  console.log('running');
-  getJson({
-    api_key: "5ddc92d308e63ed87f4b56b68acddd19f9fd5df8f1b60ffc072bcf35c92327f4",
-    engine: "google_shopping",
-    google_domain: "google.com",
-    q: medicines[0],
-  }, (json) => {
-    console.log(json);
-    console.log(json.shopping_results[0].extracted_price);
-  
-    const prices = [];
-
-    for (let i = 0; i < json.shopping_results.length; i++) {
-      prices.push({
-        "title": json.shopping_results[i].title,
-        "price": json.shopping_results[i].extracted_price,
-        "image": json.shopping_results[i].thumbnail,
-      });
-    }
-    
-    console.log(prices);
-    return(prices)
-  });
-}
-  */
-
-
-
-
-
-
